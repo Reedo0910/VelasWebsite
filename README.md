@@ -1,5 +1,5 @@
 # VelasWebsite
-[Velas, fluctuates infinitely](www.velas.xyz)
+[Velas, fluctuates infinitely](http://www.velas.xyz)
 
 一个个人网站。我的第一个前端项目，也是我的第一个GitHub项目。长期维护中。
 
