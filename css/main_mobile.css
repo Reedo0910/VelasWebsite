@@ -1,0 +1,361 @@
+ body {
+     font-family: "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+ }
+ 
+ @font-face {
+     font-family: 'NotoSansHans-Regular';
+     src: url(../font/NotoSansHans-Regular.ttf);
+     src: url(../font/NotoSansHans-Regular.eot);
+ }
+ 
+ .clearfix:after {
+     content: ' ';
+     display: block;
+     clear: both;
+ }
+ 
+ header {
+     background: #444 url(../img/background.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: 0 0;
+ }
+ 
+ ul {
+     margin: 0;
+ }
+ 
+ h3 {
+     font-size: 20px;
+ }
+ 
+ p {
+     font-size: 16px;
+     letter-spacing: 1px;
+ }
+ 
+ nav {
+     background: #777;
+     height: 50px;
+     width: 100%;
+     background-color: rgba(0, 0, 0, 0.15);
+ }
+ 
+ #banner {
+     background-color: rgba(0, 0, 0, 0.15);
+     height: 660px;
+ }
+ 
+ nav ul {
+     list-style: none;
+     margin: 0 25px 0 0;
+     float: right;
+ }
+ 
+ nav ul li {
+     display: inline-block;
+ }
+ 
+ nav ul li a,
+ #logo a {
+     line-height: 50px;
+     text-decoration: none;
+     display: inline-block;
+     height: inherit;
+     color: #fff;
+     padding: 0 20px;
+     -webkit-transition: all 0.2s ease;
+     -moz-transition: all 0.2s ease;
+     transition: all 0.2s ease;
+ }
+ 
+ #logo {
+     float: left;
+     font-size: 20px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     margin-left: 25px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+ 
+ .inner {
+     max-width: 320px;
+     text-align: center;
+     margin: 0 auto;
+     position: relative;
+     top: 120px;
+     color: #fff;
+ }
+ 
+ .active a {
+     background: #fff;
+     color: #777;
+ }
+ 
+ .inner h1 {
+     margin: 0;
+     line-height: 90px;
+     letter-spacing: 3px;
+ }
+ 
+ .sub-heading {
+     line-height: 40px;
+     margin: 30px -10px;
+     letter-spacing: 0;
+ }
+ 
+ .inner button {
+     color: #fff;
+     font-weight: 700px;
+     padding: 15px 25px;
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     border: 1px solid #fff;
+     background-color: transparent;
+ }
+ 
+ #banner .inner .more {
+     margin-top: 150px;
+     margin-bottom: 10px;
+ }
+ 
+ #banner .nhr,
+ .hr {
+     width: 30%;
+     background-color: #fff;
+     height: 2px;
+ }
+ 
+ .hr {
+     margin: 0px 69%;
+ }
+ 
+ .inner a {
+     color: #fff;
+     text-decoration: none;
+ }
+ 
+ .content {
+     height: 300px;
+     padding-bottom: 60px;
+ }
+ 
+ .white-section {
+     margin-top: -20px;
+     background-color: #fff;
+     text-align: center;
+     padding: 120px 0;
+     color: #000;
+ }
+ 
+ .wrapper {
+     max-width: 90%;
+     min-height: 500px;
+     margin: 0 auto;
+ }
+ 
+ .white-section .hr {
+     background: #777;
+     width: 30%;
+     margin: 20px auto;
+     height: 2px;
+ }
+ 
+ .icon-group {
+     margin-top: 60px;
+ }
+ 
+ .icon-group a {
+     color: rgba(0, 0, 0, 0.88);
+ }
+ 
+ .icon-group p {
+     font-family: "NotoSansHans-Regular", "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+ }
+ 
+ #icon1,
+ #icon2,
+ #icon3,
+ #icon4,
+ #icon5 {
+     display: inline-block;
+     width: 140px;
+     height: 100px;
+     margin: 5px;
+     padding: 30px 10px;
+     -webkit-transition: all 0.2s;
+     -moz-transition: all 0.2s;
+     transition: all 0.2s;
+ }
+ 
+ #footer {
+     background-color: rgba(0, 0, 0, 0.88);
+     color: #fff;
+     width: 100%;
+     min-height: 200px;
+     text-align: center;
+ }
+ 
+ ul .share-group {
+     display: block;
+     width: 100%;
+     margin: 0 auto;
+ }
+ 
+ .share-group {
+     padding: 40px;
+ }
+ 
+ .share-group li {
+     display: inline-block;
+     padding: 10px;
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+ }
+ 
+ #copy p {
+     padding: 20px 0 15px;
+     font-size: 14px;
+     letter-spacing: 0;
+     margin: 0 auto;
+ }
+ 
+ .gototop {
+     width: 32px;
+     margin: 0 84%;
+     border: #fff solid 1px;
+ }
+ 
+ .gototop a {
+     display: block;
+     text-decoration: none;
+     color: #ccc;
+     -webkit-transition: all 0.2s;
+     -moz-transition: all 0.2s;
+     transition: all 0.2s;
+ }
+ /*动画部分*/
+ /*微博*/
+ 
+ .fa.fa-weibo.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: red;
+ }
+ /*谷歌*/
+ 
+ .fa.fa-google-plus.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: orange;
+ }
+ /*扣扣*/
+ 
+ .fa.fa-qq.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: #17b2ec;
+ }
+ /*推特*/
+ 
+ .fa.fa-twitter.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: #1ab2e8;
+ }
+ /*微信*/
+ 
+ .fa.fa-weixin.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: #7dd43c;
+ }
+ /*icon*/
+ 
+ #icon1 {
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     transition: all 0.3s ease;
+     color: #fff;
+     background-image: url(../img/icongroup/icon1.jpg);
+     background-size: cover;
+     background-position: -10px 0px;
+ }
+ 
+ #icon2 {
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     transition: all 0.3s ease;
+     color: #fff;
+     background-image: url(../img/icongroup/icon2.jpg);
+     background-size: cover;
+     background-position: -10px 0px;
+ }
+ 
+ #icon3 {
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     transition: all 0.3s ease;
+     color: #fff;
+     background-image: url(../img/icongroup/icon3.jpg);
+     background-size: cover;
+     background-position: -10px 0px;
+ }
+ 
+ #icon4 {
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     transition: all 0.3s ease;
+     color: #fff;
+     background-image: url(../img/icongroup/icon4.jpg);
+     background-size: cover;
+     background-position: -10px 0px;
+ }
+ 
+ #icon5 {
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     transition: all 0.3s ease;
+     color: #fff;
+     background-image: url(../img/icongroup/icon5.jpg);
+     background-size: cover;
+     background-position: -10px 0px;
+ }
+ /*按钮*/
+ 
+ .inner button:hover {
+     -webkit-transition: all 0.3s ease-in-out;
+     -moz-transition: all 0.3s ease-in-out;
+     transition: all 0.3s ease-in-out;
+     color: #444;
+     background-color: rgba(255, 255, 255, 0.85);
+ }
+ 
+ .gototop a:hover {
+     -webkit-transition: all 0.1s ease-in-out;
+     -moz-transition: all 0.1s ease-in-out;
+     transition: all 0.1s ease-in-out;
+     color: rgba(0, 13, 33, 0.88);
+     background-color: #fff;
+ }
+ /*顶栏*/
+ 
+ header ul li:not(.active) a:hover {
+     -webkit-transition: all 0.1s ease-out;
+     -moz-transition: all 0.1s ease-out;
+     transition: all 0.1s ease-out;
+     background-color: #fff;
+     color: #777;
+ }

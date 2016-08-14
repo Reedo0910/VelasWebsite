@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>表单，用户注册</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="backonly.css">
+    <link rel="shortcut icon" href="../../Favicon.ico" />
+    <style>
+        body {
+            font-family: "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+        }
+        
+        .stylin_form1 {
+            width: 14em;
+            margin: 0 auto;
+            border: 1px solid #bbb7ae;
+            padding: .5em .5em .15em;
+        }
+        
+        .stylin_form1 h3 {
+            /* 表单主标题 */
+            margin: 0;
+            padding: 0 0 .2em .2em;
+            font-weight: 600;
+            color: #bbb7ae;
+        }
+        
+        .stylin_form1 fieldset {
+            /* 包含控件与标注 */
+            margin: 0;
+            padding: 0 0 .2em 0;
+            width: 100%;
+            border: 0;
+        }
+        
+        .stylin_form1 legend {
+            width: 100%;
+            padding: .3em 0;
+            background: #bbb7ae;
+        }
+        
+        .stylin_form1 legend span {
+            /* 标题文本样式 */
+            display: block;
+            font-size: 1em;
+            line-height: 1.1em;
+            padding: 0 0 0 .4em;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .stylin_form1 section {
+            overflow: hidden;
+            /* 强制section包含表单控件及标注 */
+            padding: .2em 0 .4em 0;
+            border-bottom: 8px solid #e7e5df;
+            /* 在每个section间增加间距 */
+        }
+        
+        .stylin_form1 section:last-child {
+            /*每组最后一个section没有边框*/
+            border-bottom: 0px;
+        }
+        
+        .stylin_form1 section label,
+        /* 表单控件 */
+        
+        .stylin_form1 section h4 {
+            /* 复选框和单选按钮组的标题 */
+            display: block;
+            clear: both;
+            margin: .3em .3em 0 0;
+            /* 右外边距确保标注文本碰到input之前换行 */
+            padding-bottom: .1em;
+            font-size: .8em;
+            font-family: 'Droid Sans';
+            font-weight: 400;
+            line-height: 1.1;
+        }
+        
+        .stylin_form1 section label span,
+        /* 星号表示必填字段 */
+        
+        .stylin_form1 section h4 span {
+            font-size: .75em;
+            vertical-align: text-top;
+            color: #f00;
+        }
+        
+        .stylin_form1 section .note {
+            /* 说明星号是必填字段的文本 */
+            font-size: .7em;
+            color: #f00;
+            margin: 0;
+            padding: 0 0 .3em 0;
+        }
+        
+        .stylin_form1 section input,
+        .stylin_form1 section textarea,
+        .stylin_form1 section select {
+            margin: .2em .5em .2em 0;
+            padding: .2em .4em;
+            /* 给input中的文本添加间距 */
+            color: #000;
+            box-shadow: 1px 1px 3px #ccc;
+            font-size: .8em;
+            font-family: inherit;
+            /*outline: none;*/
+        }
+        
+        #check1,
+        #check2,
+        #check3,
+        #check4,
+        #radio1,
+        #radio2,
+        #radio3 {
+            box-shadow: none;
+        }
+        /* 设定文本字段（文本、密码、日期、文本区等）的样式，并增加圆角 */
+        
+        .stylin_form1 section input,
+        .stylin_form1 section textarea {
+            width: 12em;
+            border: 1px solid #bbb7ae;
+            border-radius: 3px;
+        }
+        
+        .stylin_form1 section textarea {
+            height: 5em;
+            margin-top: .3em;
+            line-height: 1.1;
+        }
+        
+        .stylin_form1 section p {
+            /* 控件使用说明 */
+            margin: .3em .75em 0;
+            clear: both;
+            font-size: .7em;
+            line-height: 1.1;
+            color: #000;
+        }
+        
+        .stylin_form1 section .error {
+            color: #f00;
+        }
+        /*第二部分*/
+        
+        .stylin_form1 section section {
+            /* 控件的内包装 */
+            overflow: hidden;
+            margin: .2em 0 .3em .4em;
+            padding: 0 0 .1em 0;
+            border-bottom: none;
+        }
+        
+        .stylin_form1 section section input {
+            /* 单选按钮或复选框 */
+            float: left;
+            clear: both;
+            width: auto;
+            margin: .1em 0 0 .3em;
+            /* 顶部与标注对齐，左侧防止input溢出 */
+        }
+        
+        .stylin_form1 section section label {
+            float: left;
+            clear: none;
+            width: 15em;
+            margin: .15em 0 0 .6em;
+            /* 在相邻的复选框之间、复选框与标注之间增加间距 */
+            font-weight: normal;
+            font-size: .7em;
+            line-height: 1.2;
+        }
+        
+        .stylin_form1 section select {
+            margin-left: .4em;
+            font-size: .85em;
+        }
+        
+        .stylin_form1 section input[type="submit"] {
+            /* 提交按钮 */
+            width: auto;
+            margin: .3em .3em 0 0;
+            font-size: 1em;
+            font-weight: 800;
+            color: #fff;
+            background-color: #bbb7ae;
+            cursor: pointer;
+            /* 鼠标悬停变成小手形状 */
+        }
+        
+        .stylin_form1 > section:last-child {
+            /* 居中提交按钮 */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="back">
+            <a href="html_css.html">
+                <div class="fa fa-arrow-circle-left fa-3x"></div>
+            </a>
+        </div>
+    </nav>
+    <content>
+        <form class="stylin_form1" action="" method="">
+            <h3>假装是用户注册=￣ω￣=</h3>
+            <fieldset>
+                <legend><span>第一部分 &#8226; 基本信息</span></legend>
+                <!--开始单行文本输入控件-->
+                <section>
+                    <p class="note">* 必填信息</p>
+                    <!--for属性把标注与控件关联起来，它的值必须与控件ID值相同-->
+                    <label for="user_name">用户名<span> *</span></label>
+                    <!--text属性让这个控件可以输入文本-->
+                    <input type="text" id="user_name" name="user_name" placeholder="随便写写就好">
+                    <p>请选择一个用户名</p>
+                </section>
+                <!--开始密码控件-->
+                <section>
+                    <label for="password">密码<span> *</span></label>
+                    <!--密码文本显示为掩码-->
+                    <input type="password" id="password" name="password" placeholder="随便输输就好" maxlength="20">
+                    <p>密码必须大于或等于8个字符</p>
+                </section>
+                <!--开始多行文本输入控件-->
+                <section>
+                    <label for="description">个性签名</label>
+                    <textarea id="description" name="description" placeholder="用一段话来描述自己，随便填填就好"></textarea>
+                </section>
+                <!--开始HTML5日期控件-->
+                <section>
+                    <label for="special_date">出生日期</label>
+                    <input type="date" id="special_date" name="event_date" min="1900-01-01">
+                </section>
+            </fieldset>
+            <fieldset>
+                <legend><span>第二部分 &#8226; 详细资料</span></legend>
+                <!--开始单选按钮-->
+                <section>
+                    <h4>选择你的性别<span> *</span></h4>
+                    <section>
+                        <input checked="checked" id="radio1" name="radioset" type="radio" value="Choice_1">
+                        <label for="radio1">♂ 男</label>
+                    </section>
+                    <section>
+                        <input id="radio2" name="radioset" type="radio" value="Choice_2">
+                        <label for="radio2">♀ 女</label>
+                    </section>
+                    <section>
+                        <input id="radio3" name="radioset" type="radio" value="Choice_3">
+                        <label for="radio3">其他</label>
+                    </section>
+                    <!--开始复选框-->
+                    <section>
+                        <h4>你认为Zeee是个怎么样的人？<span> *</span></h4>
+                        <section>
+                            <input type="checkbox" id="check1" name="checkset" value="1" tabindex="4">
+                            <label for="check1">帅气(★ ω ★)</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="check2" name="checkset" value="2">
+                            <label for="check2">才华横溢(❤´艸｀❤)</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="check3" name="checkset" value="3">
+                            <label for="check3">男神(●'◡'●)</label>
+                        </section>
+                        <section>
+                            <input type="checkbox" id="check4" disabled="disabled" name="checkset" value="4">
+                            <label for="check4" style="text-decoration:line-through">我选择狗带</label>
+                        </section>
+                        <p>你必须选择一个或者多个</p>
+                    </section>
+                </section>
+                <!--开始选项列表（下拉列表）-->
+                <section>
+                    <label for="select_choice">您来自哪个国家？</label>
+                    <select id="select_choice" name="select_choice">
+                        <option value="0">中国</option>
+                        <option value="1">USA</option>
+                        <option value="2">Britain</option>
+                        <option value="3">La France</option>
+                        <option value="4">にほん</option>
+                        <option value="5">한국</option>
+                        <option value="6">其他…</option>
+                    </select>
+                </section>
+            </fieldset>
+            <!--开始提交按钮-->
+            <section>
+                <input type="submit" value="注册">
+                <p>然而这个按钮并没什么用(ˉ▽ˉ；)...</p>
+            </section>
+        </form>
+
+    </content>
+
+</body>
+
+</html>

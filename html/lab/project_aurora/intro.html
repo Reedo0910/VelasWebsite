@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>Project Aurora</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../../css/normalize.css">
+    <link rel="shortcut icon" href="../../Favicon.ico" />
+    <link rel="stylesheet" href="../html_css/backonly.css">
+
+    <script>
+        window.onload = function() {
+            var winHeight = 0;
+            var target = document.getElementById("info");
+            var introHeight = document.getElementById("intro").offsetHeight;
+            var video = document.getElementById("northernlight");
+            if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android|iOS|Microsoft Lumia|Nokia|BlackBerry)/i)) {
+                if (window.innerHeight) {
+                    winHeight = window.innerHeight;
+                } else if ((document.body) && (document.body.clientHeight)) {
+                    winHeight = document.body.clientHeight;
+                    //通过深入Document内部对body进行检测，获取窗口大小
+                    if (document.documentElement && document.documentElement.clientHeight) {
+                        winHeight = document.documentElement.clientHeight;
+                    }
+                }
+                target.style.height = winHeight - introHeight + "px";
+                clickclose();
+                video.preload = "auto";
+            } else {
+                document.getElementById("arrow").style.display = "none";
+                target.style.height = "485px";
+                video.style.display = "none";
+                document.getElementById("subpic").style.display = "inline-block";
+            }
+        }
+
+        function play() {
+            if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android|iOS|Microsoft Lumia|Nokia|BlackBerry)/i)) {
+                var video = document.getElementById("northernlight");
+                closeclick();
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        }
+
+        function cookiesave(n, v, mins, dn, path) {
+            if (n) {
+                if (!mins) mins = 365 * 24 * 60;
+                if (!path) path = "/";
+                var date = new Date();
+                date.setTime(date.getTime() + (mins * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+                if (dn) dn = "domain=" + dn + "; ";
+                document.cookie = n + "=" + v + expires + "; " + dn + "path=" + path;
+            }
+        }
+
+        function cookieget(n) {
+            var name = n + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+
+        function closeclick() {
+            document.getElementById('arrow').style.display = 'none';
+            cookiesave('closeclick', 'closeclick', '', '', '');
+        }
+
+        function clickclose() {
+            if (cookieget('closeclick') == 'closeclick') {
+                document.getElementById('arrow').style.display = 'none';
+            } else {
+                document.getElementById('arrow').style.display = 'block';
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: #383838;
+            font-family: "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+        }
+        
+        #info {
+            position: relative;
+            overflow: hidden;
+            width: 80%;
+            margin: 0 auto;
+            height: 345px;
+        }
+        
+        #logo {
+            background-color: rgba(75, 75, 107, 0.73);
+            line-height: 50px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            margin-left: 25px;
+            padding: 0 20px;
+            z-index: 10;
+            position: absolute;
+        }
+        
+        #logo,
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        #northernlight {
+            z-index: -80;
+            position: absolute;
+            width: 100%;
+        }
+        
+        #subpic {
+            z-index: -100;
+            position: absolute;
+            width: 100%;
+            display: none;
+        }
+        
+        #arrow {
+            position: relative;
+            left: 100px;
+            width: 9%;
+        }
+        
+        .fa-arrow-circle-left {
+            color: rgba(197, 197, 197, 0.68);
+        }
+        
+        .fa-arrow-circle-left:hover {
+            color: rgba(197, 197, 197, 0.95);
+        }
+        
+        .text {
+            z-index: 1;
+            color: #fff;
+            position: relative;
+            padding-left: 42px;
+            top: 26%;
+        }
+        
+        .text p {
+            margin: 0;
+        }
+        
+        #title {
+            cursor: pointer;
+        }
+        
+        #intro {
+            background-color: #fff;
+            width: 80%;
+            margin: 0 auto;
+            padding: 40px 40px 10px;
+            box-sizing: border-box;
+        }
+        
+        #intro p {
+            margin: 20px 0;
+        }
+        
+        #intro button {
+            color: #fff;
+            font-size: 16px;
+            padding: 8px 12px;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid #fff;
+            background-color: #8181ff;
+        }
+        
+        #intro button:hover {
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            background-color: rgb(0, 0, 138);
+        }
+        
+        #copyright {
+            text-align: center;
+            margin: 20px auto;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="back">
+            <a href="../../lab.html">
+                <div class="fa fa-arrow-circle-left fa-3x"></div>
+            </a>
+        </div>
+        <div id="info">
+            <video id="northernlight" oncontextmenu="return false" loop="loop" preload="none" poster="img/screenshoot.jpg">
+            <source src="http://o7a3i0m1t.bkt.clouddn.com/aurora%20short%20ver2.mp4" type="video/mp4">
+            <source src="http://o7a3i0m1t.bkt.clouddn.com/aurora_short_ver%20.ogv" type="video/ogg">
+         你的浏览器不支持html5视频播放。Your browser does not support the video tag.
+    </video>
+            <img src="img/aurora-borealis-19684.jpg" id="subpic">
+
+            <div class="text">
+                <p onclick="play()"><img id="title" src="img/title.png" alt="Project Aurora"></p>
+                <img id="arrow" src="img/arrow.png">
+            </div>
+        </div>
+        <div id="intro">
+            <h3>幻变的、律动的、绚烂的、难以捉摸的……</h3>
+            <p>在构思这个项目的时候，感觉“极光”和它出奇地贴近，而且也十分符合Velas的fluctuates infinitely的slogan。</p>
+            <p>这将是一个妙不可言的、让人屏住呼吸的东西——正如极光一样。</p>
+            <button>Coming soon</button>
+            <p id="copyright"><a href="http://www.velas.xyz" style="color: #444;">Velas&nbsp;&nbsp;&nbsp;&nbsp;2016</a></p>
+        </div>
+
+    </main>
+</body>
+
+</html>

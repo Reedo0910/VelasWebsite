@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>摄影-Velas(in CSS3)</title>
+    <meta charset="UTF-8">
+    <link href="../../css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../css/frame.css">
+    <link rel="shortcut icon" href="../Favicon.ico" />
+    <script src="waterfall-css3.js"></script>
+    <style>
+        body {
+            background-color: #444;
+        }
+        
+        nav {
+            position: fixed;
+            z-index: 1000;
+            background-color: rgba(68, 68, 68, 0.6);
+        }
+        
+        #select {
+            top: 50px;
+            position: relative;
+            text-align: center;
+            padding: 0;
+        }
+        
+        #select a {
+            text-decoration: none;
+        }
+        
+        #select li {
+            display: inline-block;
+            padding: 5px 30px;
+            margin: 0 20px;
+            color: #ccc;
+            cursor: pointer;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            border-radius: 15px;
+        }
+        
+        #select li:hover {
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            background-color: #333;
+            color: #fff;
+        }
+        
+        #select .selected {
+            background-color: #333;
+            color: #fff;
+            border-radius: 15px;
+        }
+        
+        main {
+            position: relative;
+            margin: 0 auto;
+            width: 83%;
+            top: 80px;
+        }
+        
+        #warning {
+            color: #fff;
+            text-align: center;
+        }
+        
+        .pin {
+            padding-bottom: 15px;
+            width: 260px;
+        }
+        
+        .box {
+            box-shadow: 0 0 6px #000;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            border-radius: 5px;
+        }
+        
+        .box:hover {
+            transform: translate(0, -3px);
+            box-shadow: 0 0 20px #000;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+        
+        .box img {
+            width: 260px;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="../index.html">Velas</a></div>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../log.html">日志</a></li>
+                <li><a href="../talk.html">Talk</a></li>
+                <li><a href="../lab.html">实验室</a></li>
+            </ul>
+        </nav>
+    </header>
+    <ul id="select">
+        <a href="photo.html">
+            <li>Javascript</li>
+        </a>
+        <a>
+            <li class="selected">CSS3</li>
+        </a>
+    </ul>
+    <main>
+        <div id="warning">
+            <p>该页面需要使用Javascript，请确保你浏览器允许播放Javascript内容。</p>
+        </div>
+    </main>
+</body>
+
+</html>

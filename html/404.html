@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>404 Not Found</title>
+    <meta charset="UTF-8">
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/frame.css">
+    <link rel="shortcut icon" href="Favicon.ico" />
+    <script>
+        window.onload = function() {
+            var flash = document.getElementById("flash");
+            if (navigator.userAgent.match(/(iPhone|iPad|iPod|Android|iOS|Microsoft Lumia|Nokia|BlackBerry)/i)) {
+                document.getElementById("404").style.display = "inline-block";
+                flash.style.display = "none";
+            }
+        }
+    </script>
+    <style>
+        .error-warning {
+            background: transparent;
+            padding-top: 110px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 40px;
+        }
+        
+        h3 {
+            margin: 0;
+        }
+        
+        .mark p {
+            bottom: 20px;
+            text-align: center;
+            letter-spacing: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav style="background: #777">
+            <div class="logo"><a href="index.html">Velas</a></div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="log.html">日志</a></li>
+                <li><a href="talk.html">Talk</a></li>
+                <li><a href="lab.html">实验室</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="error-warning">
+            <embed id="flash" width="400" height="300" name="plugin" src="http://cdn.abowman.com/widgets/hamster/hamster.swf?up_bodyColor=f0e9cc&amp;up_feetColor=D4C898&amp;up_eyeColor=000567&amp;up_wheelSpokeColor=DEDEDE&amp;up_wheelColor=FFFFFF&amp;up_waterColor=E0EFFF&amp;up_earColor=b0c4de&amp;up_wheelOuterColor=FF4D4D&amp;up_snoutColor=F7F4E9&amp;up_bgColor=F0E4E4&amp;up_foodColor=cba920&amp;up_wheelCenterColor=E4EB2F&amp;up_tailColor=E6DEBE&amp;"
+                type="application/x-shockwave-flash" allownetworking="internal" menu="false">
+            <p><img id="404" src="../img/404.gif" style="display:none;"></p>
+            <h3>啊噢(￣△￣；)&nbsp;&nbsp;&nbsp;&nbsp;矮油，这是哪里？</h3>
+            <p>404 Not Found</p>
+        </div>
+        <div class="mark">
+            <p>Zeee</p>
+        </div>
+    </main>
+</body>
+
+</html>

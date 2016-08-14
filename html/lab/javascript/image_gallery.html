@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>乱七八糟的测试</title>
+    <meta charset="UTF-8">
+    <link href="../../../css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../html_css/backonly.css">
+    <link rel="shortcut icon" href="../../Favicon.ico" />
+    <script src="gallery.js"></script>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+            color: #333;
+            background-color: #ccc;
+        }
+        
+        section {
+            margin: 1em 10%;
+        }
+        
+        h1 {
+            color: #333;
+            background-color: transparent;
+        }
+        
+        a {
+            color: #c60;
+            background-color: transparent;
+            font-weight: bold;
+            text-decoration: none;
+            display: block;
+        }
+        
+        #popup a {
+            color: #003dcc;
+        }
+        
+        ul {
+            padding: 0;
+        }
+        
+        li {
+            float: left;
+            padding: 1em;
+            list-style: none;
+        }
+        
+        li>:hover {
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            color: #fda043;
+        }
+        
+        img {
+            display: block;
+            clear: both;
+        }
+        
+        p {
+            color: #333;
+            font-size: .8em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="back">
+            <a href="javascript.html">
+                <div class="fa fa-arrow-circle-left fa-3x"></div>
+            </a>
+        </div>
+    </nav>
+    <section id="gallery">
+        <h1>阿鲁</h1>
+        <ul id="imagegallery">
+            <li><a href="img/aixin.png" title="爱">爱心</a></li>
+            <li><a href="img/feizao.png" title="爱肥皂">肥皂</a></li>
+            <li><a href="img/gutou.png" title="爱骨头">骨头</a></li>
+            <li><a href="img/huanggua.png" title="爱黄瓜">黄瓜</a></li>
+            <li><a href="img/jian.png" title="爱贩剑">贩剑</a></li>
+            <li><a href="img/juhua.png" title="爱菊花">菊花</a></li>
+            <img id="placeholder" src="img/space.png" alt="space">
+            <p id="description">请选择一个标签</p>
+        </ul>
+    </section>
+    <section id="popup">
+        <a href="http://cn.bing.com" class="popup">弹窗测试：必应♪(^∇^*)</a>
+    </section>
+</body>
+
+</html>

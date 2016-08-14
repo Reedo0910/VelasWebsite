@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>Velas, fluctuates infinitely</title>
+    <meta charset="UTF-8">
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="shortcut icon" href="Favicon.ico" />
+    <script>
+        if (/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))) {
+            if (window.location.href.indexOf("?mobile") < 0) {
+                try {
+                    replacejscssfile("../css/main.css", "../css/main_mobile.css")
+                } catch (e) {}
+            }
+        }
+
+        function createjscssfile(filename) {
+            var fileref = document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", filename)
+            return fileref
+        }
+
+        function replacejscssfile(oldfilename, newfilename) {
+            var targetelement = "link";
+            var targetattr = "href";
+            var allsuspects = document.getElementsByTagName(targetelement);
+            for (var i = allsuspects.length; i >= 0; i--) {
+                if (allsuspects[i] && allsuspects[i].getAttribute(targetattr) != null && allsuspects[i].getAttribute(targetattr).indexOf(oldfilename) != -1) {
+                    var newelement = createjscssfile(newfilename);
+                    allsuspects[i].parentNode.replaceChild(newelement, allsuspects[i]);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="logo"><a href="index.html">Velas</a></div>
+            <ul>
+                <li class="active"><a>首页</a></li>
+                <li><a href="log.html">日志</a></li>
+                <li><a href="talk.html">Talk</a></li>
+                <li><a href="lab.html">实验室</a></li>
+            </ul>
+        </nav>
+        <div id="banner">
+            <div class="inner">
+                <div class="nhr"></div>
+                <h1>VELAS</h1>
+                <div class="hr"></div>
+                <p class="sub-heading"><strong>春观夜樱、夏望繁星、秋赏满月、冬会初雪。</strong><br>春は夜桜 夏には星 秋に満月 冬には雪。</p>
+                <a href="#"><button>我眼中的幸福</button></a>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <section class="white-section">
+            <div class="wrapper">
+                <div>
+                    <h2>CARPE DIEM</h2>
+                    <div class="hr"></div>
+                    <div class="sub-heading">
+                        <p>“假如我们不能改变这个世界，那我们至少应该改变我们的生活——自由自在地活着。”</p>
+                    </div>
+                    <div class="icon-group">
+                        <a href="404.html"><span id="icon1"><i class="fa fa-music fa-3x"><p>音乐</p></i></span></a>
+                        <a href="404.html"><span id="icon2"><i class="fa fa-cutlery fa-3x"><p>美食</p></i></span></a>
+                        <a href="404.html"><span id="icon3"><i class="fa fa-pencil fa-3x"><p>画画</p></i></span></a>
+                        <a href="blog/photo.html"><span id="icon4"><i class="fa fa-photo (alias) fa-3x"><p>摄影</p></i></span></a>
+                        <a href="blog/game.html"><span id="icon5"><i class="fa fa-gamepad fa-3x"><p>游戏</p></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="footer">
+            <ul class="share-group">
+                <li class="fa fa-twitter fa-lg"></li>
+                <li class="fa fa-weixin fa-lg"></li>
+                <li class="fa fa-qq fa-lg"></li>
+                <li class="fa fa-weibo fa-lg"></li>
+                <li class="fa fa-google-plus fa-lg"></li>
+            </ul>
+            <div id="copy">
+                <div class="gototop">
+                    <a href="#" class="fa fa-angle-up fa-2x"></a>
+                </div>
+                <p>Zeee</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function preloader() {
+        if (document.images) {
+            var img1 = new Image();
+            var img2 = new Image();
+            var img3 = new Image();
+            var img4 = new Image();
+            var img5 = new Image();
+            img1.src = "../img/icongroup/icon1.jpg";
+            img2.src = "../img/icongroup/icon2.jpg";
+            img3.src = "../img/icongroup/icon3.jpg";
+            img4.src = "../img/icongroup/icon4.jpg";
+            img5.src = "../img/icongroup/icon5.jpg";
+        }
+    }
+    
+    function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function() {
+                if (oldonload) {
+                    oldonload();
+                }
+                func();
+            }
+        }
+    }
+    addLoadEvent(preloader);
+</script>
+
+</html>

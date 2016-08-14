@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>留言板demo,Velas's Talk</title>
+    <meta charset="UTF-8">
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/frame.css">
+    <link rel="shortcut icon" href="Favicon.ico" />
+    <style>
+        header {
+            height: 400px;
+            background: #777 url(../img/background-3.jpg) no-repeat;
+            background-size: cover;
+            background-position: 0px -144px;
+            width: 100%;
+            position: relative;
+        }
+        
+        #headinfo {
+            margin: 60px auto 95px;
+            text-align: center;
+            color: #fff
+        }
+        
+        .myhead-portrait {
+            margin: 0 auto;
+            width: 80px;
+            height: 80px;
+            background: #fff url(../img/head.jpg) no-repeat;
+            background-size: cover;
+            border-radius: 60px;
+            border: 5px solid #fff;
+        }
+        
+        #myname {
+            margin: 0.3em 0 0.3em;
+            font-size: 30px;
+        }
+        
+        #address {
+            margin: 0;
+            font-weight: lighter;
+            font-size: 20px;
+            color: #efefef;
+        }
+        
+        #selection {
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            text-align: center;
+        }
+        
+        #selection ul {
+            list-style: none;
+            display: inline-block;
+            padding: 0;
+            vertical-align: bottom;
+        }
+        
+        #selection ul li {
+            font-size: 16px;
+            font-weight: 500;
+            float: left;
+            margin: 0 55px 0;
+            padding: 0 10px 6px;
+        }
+        
+        #selection .active {
+            border-bottom: 5px solid #FBC02D;
+        }
+        
+        #selection .active a {
+            color: #fff;
+        }
+        
+        #selection a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        
+        main {
+            background-color: #ededef;
+            padding-top: 40px;
+        }
+        
+        #board {
+            position: relative;
+            min-height: 400px;
+            width: 90%;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px 20px;
+        }
+        
+        #title {
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            display: inline;
+            padding-left: 1.5em;
+        }
+        
+        #title p {
+            margin: 0 auto;
+            color: darkorange;
+            display: inline;
+            border: 1px solid orange;
+            border-radius: 8px;
+            padding: 3px 5px;
+        }
+        
+        #notice {
+            margin: 10px auto;
+        }
+        
+        #notice p {
+            width: 90%;
+            margin: 0 auto;
+            line-height: 30px;
+            color: #444;
+            position: relative;
+            font-size: .9em;
+        }
+        
+        #notice p img {
+            position: relative;
+            top: 5px;
+        }
+        
+        #msg_c div p {
+            list-style: none;
+            color: #333;
+            background-color: #fafad2;
+            margin: 30px auto;
+            padding: 30px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            -webkit-transition: all 0.1s;
+            -moz-transition: all 0.1s;
+            transition: all 0.1s;
+            position: relative;
+        }
+        
+        #msg_c div p:hover {
+            -webkit-transition: all 0.1s;
+            -moz-transition: all 0.1s;
+            transition: all 0.1s;
+            background-color: goldenrod;
+        }
+        
+        #msg_c div {
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        #msg_c div div {
+            font-size: .8em;
+            color: #bbb;
+            margin-right: 5%;
+            position: absolute;
+            bottom: 7px;
+            text-align: right;
+        }
+        
+        #send {
+            margin: 40px auto;
+            text-align: center;
+        }
+        
+        #btn {
+            display: block;
+            border-style: none;
+            color: #fff;
+            font-weight: 500;
+            padding: 5px 15px;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            background-color: rgba(236, 40, 40, 0.57);
+            margin: 0;
+        }
+        
+        #btn:hover {
+            border-style: none;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            transform: translateY(-4px);
+            background-color: rgba(255, 0, 0, 0.9);
+        }
+        
+        #send_btn {
+            padding-left: 78%;
+            margin-top: 10px;
+        }
+        
+        textarea {
+            width: 70%;
+            border: 1px solid #bbb7ae;
+            border-radius: 3px;
+            height: 12em;
+            margin-top: .3em;
+            line-height: 1.1;
+        }
+        
+        .blankspace {
+            height: 150px;
+            width: 100%;
+        }
+        
+        .fa-trash {
+            font-size: .8em;
+            cursor: pointer;
+            color: purple;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }
+        
+        .fa-trash:hover {
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            transition: all 0.2s;
+            color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Velas</a></div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="log.html">日志</a></li>
+                <li class="active"><a>Talk</a></li>
+                <li><a href="lab.html">实验室</a></li>
+            </ul>
+        </nav>
+        <div id="headinfo">
+            <div class="myhead-portrait"></div>
+            <div id="myname">Zeee</div>
+            <div id="address">@VelasZeee</div>
+        </div>
+
+        <div id="selection">
+            <ul>
+                <li><a href="talk.html">碎碎念</a></li>
+                <li class="active"><a>留言</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div id="board">
+            <div id="title">
+                <h1>留言板</h1>
+                <p>预览版</p>
+            </div>
+
+            <div id="send">
+                <textarea id="msg" placeholder="写点什么吧 (*/ω＼*)"></textarea>
+                <div id="send_btn"><input id="btn" type="button" value="留言"></div>
+            </div>
+            <div id="msg_c"></div>
+            <div id="notice">
+                <p style="color: #cc0000;">由于Zeee目前知识所限，您现在看到的留言板只是一个用Javascript和HTML编写的实现了发送/删除留言的功能的demo，<strong>而发出的留言数据均不能保存</strong>。也就是说您的留言虽在网页上显示了，却不能传到Zeee的电脑上。对此Zeee感到十分抱歉和愧疚，并已在学习相关知识，争取早日将一个具备完整功能的留言板带到您的面前。若要联系Zeee，请发送您的邮件至<img height="17px" src='../img/snapshot/email.png'
+                        alt='email' />。Zeee将仔细阅读您的每一封来信，非常感谢您的支持。</p>
+            </div>
+            <div class="blankspace"></div>
+        </div>
+        <div id="footer">
+            <ul class="share-group">
+                <li class="fa fa-twitter fa-lg"></li>
+                <li class="fa fa-weixin fa-lg"></li>
+                <li class="fa fa-qq fa-lg"></li>
+                <li class="fa fa-weibo fa-lg"></li>
+                <li class="fa fa-google-plus fa-lg"></li>
+            </ul>
+            <div id="copy">
+                <div id="gototop">
+                    <a href="javascript:scrollTo(0,0);" class="fa fa-angle-up fa-2x"></a>
+                </div>
+                <p>Zeee</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        function attachment() {
+            if (!navigator.userAgent.match(/(iPhone|iPad|iPod|Android|iOS|Microsoft Lumia|Nokia|BlackBerry)/i)) {
+                document.getElementsByTagName("header")[0].style.backgroundAttachment = "fixed";
+            }
+        }
+
+        function messageBoard() {
+            var oMsg = document.getElementById("msg");
+            var oBtn = document.getElementById("btn");
+            var oMsg_c = document.getElementById("msg_c");
+            var oDiv = document.createElement("div");
+            oMsg_c.appendChild(oDiv);
+            oBtn.onclick = function() {
+                var sVal = oMsg.value;
+                var oP = document.createElement("p");
+                var newDiv = document.createElement("div");
+                if (sVal.length <= 0) {
+                    alert("输入内容不能为空，说点什么吧~");
+                } else {
+                    var d = new Date();
+                    var min = d.getMinutes();
+                    min = min > 9 ? min : "0" + min;
+                    newDiv.innerHTML = d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日" + " " + d.getHours() + ":" + min;
+                    sVal = sVal.replace(/\n/g, "<br>");
+                    oP.innerHTML = sVal + " <span class='fa fa-trash fa-lg'>删除</span>";
+                    var oP1 = oDiv.getElementsByTagName("p");
+                    if (oP1.length > 0) {
+                        oP.appendChild(newDiv);
+                        oDiv.insertBefore(oP, oP1[0]);
+                    } else {
+                        oP.appendChild(newDiv);
+                        oDiv.appendChild(oP);
+                    }
+                    oMsg.value = '';
+                    var oSpan = document.getElementsByTagName("span");
+                    for (var i = 0; i < oSpan.length; i++) {
+                        oSpan[i].onclick = function() {
+                            oDiv.removeChild(this.parentNode);
+                        }
+                    }
+                }
+            }
+        }
+
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function() {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+                }
+            }
+        }
+        addLoadEvent(messageBoard);
+        addLoadEvent(attachment);
+    </script>
+</body>
+
+</html>

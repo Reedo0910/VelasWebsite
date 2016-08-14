@@ -1,0 +1,352 @@
+ body {
+     font-family: "Microsoft YaHei", 微软雅黑, Arial, sans-serif;
+     background-color: #f9f9f9;
+ }
+ 
+ ul {
+     margin: 0;
+ }
+ 
+ h1 {
+     font-size: 1.4em;
+     margin-top: 10px;
+     margin-left: 11%;
+     float: left;
+ }
+ 
+ .sl {
+     width: 2px;
+     height: 25px;
+     background-color: #bbb;
+ }
+ 
+ h3 {
+     font-size: 20px;
+ }
+ 
+ p {
+     font-size: 16px;
+     letter-spacing: 1px;
+ }
+ 
+ .hr {
+     background: #777;
+     width: 30%;
+     margin: 50px auto;
+     height: 2px;
+ }
+ 
+ header {
+     height: 100px;
+     width: 100%;
+     background-color: #fff;
+ }
+ 
+ nav {
+     height: 50px;
+     width: 100%;
+     background-color: transparent;
+ }
+ 
+ nav ul {
+     list-style: none;
+     margin: 0 25px 0 0;
+     float: right;
+ }
+ 
+ #lab-title {
+     display: inline-block;
+     width: 100%;
+ }
+ 
+ #lab-title ul {
+     float: left;
+     margin: 11px 0px;
+     padding-left: 15px;
+ }
+ 
+ #lab-title ul li a {
+     padding: 0 15px;
+     line-height: 36px;
+     text-decoration: none;
+     color: #ccc;
+ }
+ 
+ #lab-title ul li {
+     -webkit-transition: all 0.5s;
+     -moz-transition: all 0.5s;
+     transition: all 0.5s;
+ }
+ 
+ .active-card {
+     border-bottom: blue solid 3px;
+ }
+ 
+ #lab-title ul .active-card a {
+     color: #000;
+ }
+ 
+ #lab-title .sl {
+     float: left;
+     margin-top: 15px;
+     margin-left: 15px;
+ }
+ 
+ nav ul li,
+ #lab-title ul li {
+     display: inline-block;
+     font-weight: 500;
+ }
+ 
+ nav ul li a,
+ .logo a {
+     line-height: 50px;
+     text-decoration: none;
+     display: inline-block;
+     height: inherit;
+     color: #ccc;
+     padding: 0 20px;
+     -webkit-transition: all 0.2s ease;
+     -moz-transition: all 0.2s ease;
+     transition: all 0.2s ease;
+ }
+ 
+ nav .logo a {
+     color: #fff;
+ }
+ 
+ nav .logo {
+     background-color: #a0a7fb;
+     float: left;
+     font-size: 20px;
+     letter-spacing: 1px;
+     margin-left: 25px;
+     font-weight: 700;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
+ 
+ .active a {
+     color: #000;
+ }
+ 
+ #lab-notice {
+     padding-top: 15%;
+     width: 70%;
+     min-height: 600px;
+     margin: 0 auto;
+     text-align: center;
+     line-height: 40px;
+ }
+ 
+ #lab-notice p {
+     color: #888;
+ }
+ 
+ #lab-cardgroup {
+     padding-top: 5%;
+     min-height: 600px;
+     margin: 0 0 0 150px;
+     line-height: 40px;
+ }
+ 
+ .labcard {
+     width: 150px;
+     float: left;
+     height: 205px;
+     position: relative;
+     box-shadow: 8px 6px 13px -8px #888;
+     box-sizing: border-box;
+     text-align: center;
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     transition: all 0.3s ease;
+     margin-bottom: 60px;
+     margin-right: 70px;
+ }
+ 
+ /*淡粉红色*/
+ #lab-cardgroup .labcard:nth-last-child(5n+1){
+     background-color: #ffb6c1;
+ }
+ 
+ /*淡蓝色*/
+ #lab-cardgroup .labcard:nth-last-child(5n+2){
+     background-color: #87cefa;
+ }
+ 
+ /*淡绿色*/
+ #lab-cardgroup .labcard:nth-last-child(5n+3){
+     background-color: #90ee90;
+ }
+ 
+ /*淡珊瑚色*/
+ #lab-cardgroup .labcard:nth-last-child(5n+4){
+     background-color: lightcoral;
+ }
+ 
+ /*淡海绿色*/
+ #lab-cardgroup .labcard:nth-last-child(5n+5){
+     background-color: #20b2aa;
+ }
+ 
+ .labcard .cardname {
+     margin: 0 auto;
+     background-color: rgba(136, 136, 136, 0.54);
+     ;
+     color: #fff;
+     text-align: center;
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+ }
+ 
+ .labcard .cardtype {
+     font-size: 40px;
+     font-weight: 800;
+     margin: 0 auto;
+     background-color: transparent;
+     color: #fff;
+     position: absolute;
+     top: 24px;
+     left: 13px;
+     line-height: 42px;
+ }
+ 
+ .labcard .new-mark {
+     color: #fafafa;
+     position: absolute;
+     top: 13px;
+     right: 0;
+     margin: 0;
+     line-height: 10px;
+     transform: rotate(45deg);
+ }
+ 
+ #footer {
+     background-color: rgba(0, 0, 0, 0.88);
+     color: #fff;
+     width: 100%;
+     min-height: 200px;
+     text-align: center;
+ }
+ 
+ ul .share-group {
+     display: block;
+     width: 100%;
+     margin: 0 auto;
+ }
+ 
+ .share-group {
+     padding: 40px;
+ }
+ 
+ .share-group li {
+     display: inline-block;
+     padding: 10px;
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+ }
+ 
+ #copy p {
+     padding: 20px 0 15px;
+     font-size: 14px;
+     letter-spacing: 0;
+     margin: 0 auto;
+ }
+ 
+ .gototop {
+     width: 32px;
+     margin: 0 84%;
+     border: #fff solid 1px;
+ }
+ 
+ .gototop a {
+     display: block;
+     text-decoration: none;
+     color: #ccc;
+     -webkit-transition: all 0.2s;
+     -moz-transition: all 0.2s;
+     transition: all 0.2s;
+ }
+ /*动画部分*/
+ /*微博*/
+ 
+ .fa.fa-weibo.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: red;
+ }
+ /*谷歌*/
+ 
+ .fa.fa-google-plus.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: orange;
+ }
+ /*扣扣*/
+ 
+ .fa.fa-qq.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: #17b2ec;
+ }
+ /*推特*/
+ 
+ .fa.fa-twitter.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: #1ab2e8;
+ }
+ /*微信*/
+ 
+ .fa.fa-weixin.fa-lg:hover {
+     -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+     transition: all 0.2s ease-in-out;
+     transform: translateY(-5px);
+     color: #7dd43c;
+ }
+ /*按钮*/
+ 
+ .gototop a:hover {
+     -webkit-transition: all 0.1s ease-in-out;
+     -moz-transition: all 0.1s ease-in-out;
+     transition: all 0.1s ease-in-out;
+     color: rgba(0, 13, 33, 0.88);
+     background-color: #fff;
+ }
+ /*导航栏*/
+ 
+ header ul li:not(.active) a:hover {
+     -webkit-transition: all 0.1s ease-out;
+     -moz-transition: all 0.1s ease-out;
+     transition: all 0.1s ease-out;
+     color: #333;
+ }
+ 
+ #lab-title ul li:not(.active-card) a:hover {
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     transition: all 0.3s ease;
+     color: #444;
+ }
+ /*卡片*/
+ 
+ .labcard:hover {
+     -webkit-transition: all 0.2s ease;
+     -moz-transition: all 0.2s ease;
+     transition: all 0.2s ease;
+     transform: translate(0, -10px);
+     background-color: #dfdfdf;
+     box-shadow: 8px 3px 20px -8px #666;
+ }

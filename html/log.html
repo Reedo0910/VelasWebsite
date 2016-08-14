@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>Velas's Log,更新日志</title>
+    <meta charset="UTF-8">
+    <link href="../css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/frame.css">
+    <link rel="shortcut icon" href="Favicon.ico" />
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        li {
+            font-size: 16px;
+        }
+        
+        header {
+            height: 400px;
+            background: #777 url(../img/background-2.jpg) no-repeat;
+            background-size: cover;
+            background-position: 0px -167px;
+            width: 100%;
+        }
+        
+        header p {
+            color: #fff;
+            margin: 0 0 0 15%;
+            letter-spacing: 3px;
+        }
+        
+        nav {
+            background: transparent;
+        }
+        
+        #note {
+            padding-top: 20px;
+            width: 70%;
+            margin: 0 auto;
+            line-height: 26px;
+        }
+        
+        h1 {
+            margin: 6% 11% 0;
+            text-align: center;
+            padding: 16px 16px 13px;
+            width: 15%;
+            color: #fff;
+            font-size: 2em;
+            letter-spacing: 1px;
+        }
+        
+        h3 {
+            margin: 0;
+            padding: 0 10px;
+            color: #444;
+            line-height: 40px;
+            cursor: pointer;
+        }
+        
+        .date {
+            width: 100%;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .notecard {
+            overflow: hidden;
+            margin: 17px auto;
+        }
+        
+        .notecard h2,
+        .notecard ol {
+            float: left;
+            max-height: 9999px;
+        }
+        
+        .notecard ol {
+            width: 77%;
+        }
+        
+        .notecard h2 {
+            width: 15%;
+            padding-left: 25px;
+        }
+        
+        .postscript {
+            display: inline-block;
+            max-height: 9999px;
+        }
+        
+        .postscript .hr {
+            background: #888;
+            margin: 50px 0 40px;
+            width: 30%;
+            height: 1px;
+        }
+        
+        .postscript p {
+            line-height: 26px;
+            color: #888;
+        }
+        
+        .postscript p span {
+            color: #444;
+        }
+        
+        .blank {
+            height: 120px;
+        }
+        
+        .notegroup {
+            height: 0px;
+            overflow: hidden;
+        }
+        
+        .open .fa-caret-right {
+            -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+        
+        .date i {
+            -webkit-transition: all 0.16s ease;
+            -o-transition: all 0.16s ease;
+            transition: all 0.16s ease;
+        }
+        
+        .add_dash {
+            display: inline;
+            border-bottom: 1px dashed #444;
+        }
+        
+        .insert {
+            font-size: 14px;
+            display: block;
+            line-height: 3;
+            border-right: 15px solid #ccc;
+            background-color: #444;
+            color: #fff;
+            padding-left: 15px;
+            height: 0px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .insert strong {
+            font-weight: 400;
+            color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Velas</a></div>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li class="active"><a>日志</a></li>
+                <li><a href="talk.html">Talk</a></li>
+                <li><a href="lab.html">实验室</a></li>
+            </ul>
+        </nav>
+        <h1>更新日志</h1>
+        <p>让每天都来点新意思</p>
+    </header>
+    <main>
+        <div id="note">
+            <!--日志模板  
+              <div class="notecard">
+                <h2>x月xx日</h2>
+                <ol>
+                    <li></li>
+                </ol>
+            </div>
+            -->
+            <div id="note-August">
+                <!--8月份更新日志-->
+                <div class="date">
+                    <h3><i class="fa fa-caret-right fa-lg"></i>&nbsp;&nbsp;&nbsp;2016年 8月</h3></div>
+                <div class="notegroup">
+                    <div class="notecard">
+                        <h2>8月11日</h2>
+                        <ol>
+                            <li>标注设计样式调整。</li>
+                            <li>修复了在触屏设备上标注展开后不能隐藏的bug。</li>
+                        </ol>
+                    </div>
+                    <div class="notecard">
+                        <h2>8月8日</h2>
+                        <ol>
+                            <li>针对移动设备和高分屏优化Talk页的定位逻辑，优化了展开/关闭文章的体验。</li>
+                            <li>重写了日志页中将月份列表标题固定定位的方法，修复了标题固定定位异常、日志页定位触发失效、标题固定定位超出边界等bug。</li>
+                            <li>
+                                <div class="add_dash">修复了在Firefox中平滑定位失效的bug。</div>
+                                <span class="insert">$('<strong>html</strong>,body').animate({scrollTop: locationPoint}, time);</span></li>
+                            <li><strong>日志页新增了标注信息功能。现在，带有标注的更新项都会有虚线注明。将鼠标移到其上方时，将自动显示相应的标注内容。方便了以后翻阅更新相关代码或注释备忘等。</strong></li>
+                        </ol>
+                    </div>
+                    <div class="notecard">
+                        <h2>8月7日</h2>
+                        <ol>
+                            <li>优化Talk页的定位逻辑</li>
+                            <li>对日志页和Talk页舍弃了使用锚点的定位方法，并引入了利用jQ实现平滑定位的方法。使定位过程更加流畅。</li>
+                            <li>代码结构优化。</li>
+                            <li style="list-style-type: disc;"><del>已知问题：日志页在有列表展开的情况下，点击展开其他列表，月份标题的固定定位方法会出现异常。同时该问题也影响了日志页的定位触发。</del><strong>已修复√</strong></li>
+                        </ol>
+                    </div>
+                    <div class="notecard">
+                        <h2>8月6日</h2>
+                        <ol>
+                            <li>修复了展开动画在运行过程中被关闭，或关闭过程中被展开时，页面（动画）卡死的bug。<del>现在展开动画可以尽情蹂躏了。</del></li>
+                            <li>代码结构优化</li>
+                        </ol>
+                    </div>
+                    <div class="notecard">
+                        <h2>8月5日</h2>
+                        <ol>
+                            <li><strong>为Talk页文章详情的展开/关闭添加了动画，并实现了仅对展开的文章进行图片懒加载。</strong></li>
+                            <li><strong>对Talk页文章列表的代码结构进行模块化，为后台接入做准备。</strong></li>
+                        </ol>
+                    </div>
+                    <div class="notecard">
+                        <h2>8月4日</h2>
+                        <ol>
+                            <li><strong>为日志页列表的展开/关闭添加了动画。</strong></li>
+                            <li>优化了日志页列表的使用逻辑和实现代码。</li>
+                        </ol>
+                    </div>
+                    <div class="notecard">
+                        <h2>8月1日</h2>
+                        <ol>
+                            <li>修复了一处瀑布流在CSS3实现方式下界面异常的bug</li>
+                            <li>修复了一处Talk页（留言板页）界面的显示bug。</li>
+                            <li>修复了Edge以及其他webkit手机浏览器下的日志页的月份标题在fixed状态下点击时发生错位的bug。<br>*由于bug修复，现在在手机浏览器下也能看到月份标题的fixed（固定在浏览器顶端）效果了。</li>
+                            <li>日志页代码优化，并对日志展开行为的代码进行分离。</li>
+                            <li>将jQ库(版本:2.1.1)放到了服务器中，一定程度上缓解了之前打开日志页有延时的问题。</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div id="note-July">
+                <!--7月份更新日志-->
+                <div class="date">
+                    <h3><i class="fa fa-caret-right fa-lg"></i>&nbsp;&nbsp;&nbsp;2016年 7月</h3></div>
+                <div class="notegroup">
+                    <div class="notecard">
+                        <h2>7月31日</h2>
+                        <ol>
+                            <li>增加了瀑布流在CSS3下的实现方式。</li>
+                            <li>修复了瀑布流在JS实现方式下显示bug。</li>
+                            <li>修复了瀑布流的JS运行可能会在浏览器报错的bug。</li>
+                        </ol>
+                    </div>
+
+
+                    <div class="notecard">
+                        <h2>7月29日</h2>
+                        <ol>
+                            <li><strong>摄影页开放，用于瀑布流视图测试。</strong></li>
+                            <li>首页界面细节调整。</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>7月8日</h2>
+                        <ol>
+                            <li>Talk界面细节调整。</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>7月7日</h2>
+                        <ol>
+                            <li>消除了Webkit的Font Boosting特性对个别网页字体与排版的影响。现在日志页与Talk页的字体大小在安卓浏览器上都与其他页面统一了。</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>7月4日</h2>
+                        <ol>
+                            <li>修复了Talk和实验室页面部分UI出错的bug</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>7月1日</h2>
+                        <ol>
+                            <li>修复了网页语言会被浏览器识别为英文的bug</li>
+                            <li>更新了404页面的设计</li>
+                        </ol>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div id="note-June">
+                <!--6月份更新日志-->
+                <div class="date">
+                    <h3><i class="fa fa-caret-right fa-lg"></i>&nbsp;&nbsp;&nbsp;2016年 6月</h3></div>
+                <div class="notegroup">
+
+                    <div class="notecard">
+                        <h2>6月19日</h2>
+                        <ol>
+                            <li>更改了Talk页月份列表毛玻璃效果的实现方式，新的模糊效果更加自然。<strong>同时也修复了(Microsoft Edge、iOS Safari、Android Browser等)原本支持filter:blur的浏览器上Talk页月份列表背景不能显示毛玻璃效果的bug。</strong></li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>6月7日</h2>
+                        <ol>
+                            <li>做了一些视觉风格的调整。</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>6月6日</h2>
+                        <ol>
+                            <li>调整了Talk页月份列表的配色和排版，使得整体视觉体验更统一。</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>6月5日</h2>
+                        <ol>
+                            <li><strong>重新设计了Talk页的月份列表，</strong>并将打开月份列表的方式改为点击月份标签。</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>6月4日</h2>
+                        <ol>
+                            <li><strong>为Talk页加入月份列表和月份标签。</strong></li>
+                            <li>由于兼容性问题，移除了日志页月份在移动端的浮动置顶效果。</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>6月3日</h2>
+                        <ol>
+                            <li><strong>为日志页加入日志列表折叠功能，</strong>并优化了一系列代码，争取带来最佳的用户体验。</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>6月2日</h2>
+                        <ol>
+                            <li>引入了makefixed.js元素固定插件。优化了日志页元素固定样式（fixed）效果。</li>
+                            <li>优化了Talk页的文章展开逻辑</li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="note-May">
+                <!--5月份更新日志-->
+                <div class="date">
+                    <h3><i class="fa fa-caret-right fa-lg"></i>&nbsp;&nbsp;&nbsp;2016年 5月</h3></div>
+                <div class="notegroup">
+                    <div class="notecard">
+                        <h2>5月29日</h2>
+                        <ol>
+                            <li><strong>引入了Echo.js图像延迟加载库(lazy-loading)。</strong>现在Talk页面文章处于折叠状态下时，折叠部分的图片不会像原先那样全部加载了。</li>
+                            <li>日志列表逻辑改进，当更新项只有一个时显示项目符号</li>
+                            <li>Talk页面收起/展开文章功能代码优化</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月28日</h2>
+                        <ol>
+                            <li>留言板的布局调整，并改进了JS代码</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月27日</h2>
+                        <ol>
+                            <li>Talk页增加文章展开/收起按钮</li>
+                            <li>Talk页的留言板(demo)开放</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月26日</h2>
+                        <ol>
+                            <li><strong>调整了首页在移动端上的显示效果</strong></li>
+                            <li>优化了首页和日志页的视觉效果</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月25日</h2>
+                        <ol>
+                            <li><strong>Talk页面开放</strong></li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月19日</h2>
+                        <ol>
+                            <li>美化实验室环境</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月18日</h2>
+                        <ol>
+                            <li>一点点美化工作</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月17日</h2>
+                        <ol>
+                            <li>发现了渐变参数（linear-gradient），用于游戏页美化</li>
+                            <li>实验室项目列表实现了卡片效果</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月16日</h2>
+                        <ol>
+                            <li>CSS代码调整，适应响应式布局</li>
+                            <li><strong>游戏页开放，尝试引入Html5视频</strong></li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月14日</h2>
+                        <ol>
+                            <li><strong>全新实验室页设计</strong></li>
+                            <li>日志页界面调整</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月13日</h2>
+                        <ol>
+                            <li><strong>全新日志页设计</strong></li>
+                            <li>优化了代码和图片体积，大大提升了网页加载速度</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月12日</h2>
+                        <ol>
+                            <li><strong>新域名加入！启用了www.velas.xyz新网址，更便于记忆</strong></li>
+                            <li>采用js图片预加载方式，提升了首页的体验</li>
+                            <li>开放实验室版面</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月11日</h2>
+                        <ol>
+                            <li><strong>全新的首页设计</strong></li>
+                            <li>进行了图片压缩，加快了网页加载速度，减少了流量消耗</li>
+                            <li>开放更新日志版面，一起来见证Velas的成长</li>
+                            <li>结构优化……</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月10日</h2>
+                        <ol>
+                            <li>发现了新的动画过渡方式，现在动画更加自然流畅啦</li>
+                            <li>更换了首页图片</li>
+                            <li>结构优化</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月6日</h2>
+                        <ol>
+                            <li><strong>为网页添加了CSS3动画，使页面更加灵动</strong></li>
+                            <li>增加了404提示页面和弹窗消息</li>
+                        </ol>
+                    </div>
+
+                    <div class="notecard">
+                        <h2>5月3日</h2>
+                        <ol>
+                            <li><strong>Velas建站</strong></li>
+                        </ol>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="postscript">
+                <div class="hr"></div>
+                <p>网站作者Zeee将把自己的奇思妙想和新学到的前端知识投入到Velas中
+                    <br> 每一天，在你看到或者看不到的地方，Velas都变得比昨天更成熟一些，更精致一些。
+                    <br> 感谢你的到来，与Zeee一同将Velas变得更美好。
+                    <br> 没有你的支持就没有Velas的今天，Zeee在这里诚心向所有到访者致谢。
+                    <br>
+                    <br>
+                    <br> *想获得本站的最佳体验，请在<span>Firefox</span>、 <span>Chrome</span>、 <span>Microsoft Edge</span>上浏览，或将你的浏览器升级至最新版本。
+                </p>
+                <div class="blank"></div>
+            </div>
+
+        </div>
+
+        <div id="footer">
+            <ul class="share-group">
+                <li class="fa fa-twitter fa-lg"></li>
+                <li class="fa fa-weixin fa-lg"></li>
+                <li class="fa fa-qq fa-lg"></li>
+                <li class="fa fa-weibo fa-lg"></li>
+                <li class="fa fa-google-plus fa-lg"></li>
+            </ul>
+            <div id="copy">
+                <div id="gototop">
+                    <a href="#" class="fa fa-angle-up fa-2x"></a>
+                </div>
+                <p>Zeee</p>
+            </div>
+        </div>
+
+    </main>
+</body>
+<script src="../js/log.js"></script>
+
+</html>
